@@ -1,23 +1,24 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 
 
 export function Sumofall(){
 
-    const [sum,setSum] = useState(0)
+    const [n,setn] = useState(0)
 
-    function HandlerSum(e){
-        let n = e.target.value
-        let sums = 0;
+    
 
+    let sum = useMemo(()=>{
+        let sum = 0
         for(let i = 1; i <= n;i++){
-            sums = sums + i
+            sum= sum + i
         }
-        setSum(sums)
+        return sum
+    },[n])
 
-    }
+
     return <>
         <div>
-            <input type="number" onChange={HandlerSum}></input>
+            <input type="number" onChange={(e)=>setn(e.target.value)}></input>
             <br></br>
             <h1>sum of {sum}</h1>
             <button>count</button>
