@@ -1,6 +1,6 @@
 
 import {ReactDOM,memo  } from "react"
-export const Child  = memo( function Child({add}){
+export const Child  = memo( function Child({add,fun}){
 
     console.log('child')
     return<></>
